@@ -151,7 +151,7 @@ namespace solidity::langutil
 	K(Constant, "constant", 0)                                         \
 	K(Constructor, "constructor", 0)                                   \
 	K(Continue, "continue", 0)                                         \
-	K(Contract, "contract", 0)                                         \
+	K(Contract, u8"合约", 0)             \
 	K(Do, "do", 0)                                                     \
 	K(Else, "else", 0)                                                 \
 	K(Enum, "enum", 0)                                                 \

@@ -37,7 +37,9 @@ inline bool isWhiteSpace(char c)
 
 inline bool isIdentifierStart(char c)
 {
-	return c == '_' || c == '$' || ('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z');
+	if(isWhiteSpace(c) || c== 0x0)
+		return false;
+	return c == '_' || c == '$' || ('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z') || (static_cast<unsigned>(c) <= 0x1f || static_cast<unsigned>(c) >= 0x7f);
 }
 
 inline bool isIdentifierPart(char c)

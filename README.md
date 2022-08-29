@@ -90,3 +90,19 @@ Some third-party code has its [own licensing terms](cmake/templates/license.h.in
 ## Security
 
 The security policy may be [found here](SECURITY.md).
+
+## 加入中文关键字
+
+项目来源，就是群里吹的一个牛逼。
+主要改动在token.h 目前就改了 token contract 为u8"合约"
+
+原本isIdentifierStart函数是这样
+``` c
+return c == '_' || c == '$' || ('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z');
+
+```
+根本就不支持unicode所以支持中文关键字，没有可能。
+改法看代码吧。
+
+关键性的代码就这么几行，我也还是花了几个小时。
+大家有兴趣可以继续耍耍。
